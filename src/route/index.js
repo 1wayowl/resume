@@ -4,7 +4,38 @@ const express = require('express')
 const router = express.Router()
 
 // ================================================================
+// var вводимо змінна, маштабування коду
 
+var header = {
+  name: {
+    firstname: 'Ivan',
+    lastname: 'Ivanov',
+  },
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$ в місяць',
+  address: 'Kharkiv, Ukraine',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'ivanov@mail.com',
+      href: 'mailto:ivanov@mail.com',
+    },
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    linkedin: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+    address: {
+      text: 'Kharkiv, Ukraine',
+    },
+  },
+}
+// ================================================================
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -23,10 +54,210 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume | Summary',
+    },
+
+    header,
+
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of experience 
+        in development. Whenever I start to work on a new project I learn 
+        the domain and try to understand the idea of the project. Good team 
+        player, every colleague is a friend to me.`,
+      },
+
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from different platforms ( odds )
+         and sport statistics (tournament position, goals etc), analyzing by simple mathematics models 
+         and preparing probability for such events like: money line - first win / draw / second win,
+         totals etc.`,
+      },
+    },
+
+    footer,
   })
 })
 
 // ================================================================
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/skills', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume | Skiils',
+    },
+
+    header,
+
+    main: {
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Handlebars',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'VS Code & NPM',
+          point: 8,
+          isTop: false,
+        },
+        {
+          name: 'Git & Terminal',
+          point: 7,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
+      ],
+
+      hobbies: [
+        { name: 'Programing', isMain: true },
+        { name: 'Workout', isMain: true },
+        { name: 'History', isMain: false },
+      ],
+    },
+
+    footer,
+  })
+})
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume | Education',
+    },
+
+    header,
+
+    main: {
+      educations: [
+        {
+          name: 'NTU KPI',
+          isEnd: true,
+        },
+        {
+          name: 'XAI',
+          isEnd: true,
+        },
+        {
+          name: 'UIPA',
+          isEnd: false,
+        },
+        {
+          name: 'Yaroslava Mudrogo',
+          isEnd: false,
+        },
+      ],
+      certificates: [
+        {
+          name: 'З відзнакою',
+          id: 100,
+        },
+        {
+          name: 'Добре',
+          id: 80,
+        },
+        {
+          name: 'Зараховано',
+          id: 50,
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/work', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume | Work',
+    },
+
+    header,
+
+    main: {
+      works: [
+        {
+          position: 'Junior Fullstack JS Developer',
+          company: {
+            name: 'Kharkiv foundation',
+            url: 'http://khfion.com.ua',
+          },
+          duration: {
+            from: '10.10.2022',
+            to: null,
+          },
+
+          projectAmount: 3,
+
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://resume.com.ua/',
+              about:
+                'Projects are temporary, no matter how many years they last.',
+              stacks: [
+                {
+                  name: 'react.js',
+                },
+                {
+                  name: 'HTML/CSS',
+                },
+                {
+                  name: 'Nodejs',
+                },
+              ],
+              awards: [
+                {
+                  name: 'Through its tradition of awarding programs with demonstrated health improvements coupled with cost savings',
+                },
+                {
+                  name: 'CMAA’s Project Achievement Awards program highlights the best of the best, those projects that serve as an example to the industry, and are true pinnacles of excellence and innovation. ',
+                },
+              ],
+              stackAmount: 3,
+              awardAmount: 2,
+            },
+          ],
+        },
+      ],
+    },
+
+    footer,
+  })
+})
 
 // Підключаємо роутер до бек-енду
 module.exports = router
