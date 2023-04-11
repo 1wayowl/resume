@@ -48,9 +48,13 @@
             <li>{{company}}</li>
             <li>{{title}}</li>
             <li>{{startDate}} - {{endDate}}</li>
-            <li>
-                <q>{{responsibilities}}</q>
-            </li>
+            <ul>
+                {{#each responsibilities}}
+                <li>
+                    {{''}}
+                </li>
+                {{/each}}
+            </ul>
             <li>{{year_founded}}</li>
             <li>{{industry}}</li>
 
