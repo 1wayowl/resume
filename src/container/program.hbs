@@ -8,7 +8,7 @@
 
     {{> title data='Excursion:' big=true}}
 
-    {{#with excursion}}
+    {{#with excursion }}
     <strong>Name:{{name}}</strong>
     <li>Location: {{location.city}} ({{location.country}}) </li>
     <li>Date: {{date}} </li>
@@ -17,63 +17,64 @@
 
     {{#each program}}
     <ul>
-        <div>{{name}} -- {{type}} ({{duration}}h) </div>
+        <div>
+            <h3>{{name}} -- {{type}} ({{duration}}h) </h3>
+        </div>
 
         {{#with details}}
 
-        <section>
-            {{#with museum}}
-            {{> title data='Museum'}}
-            <ul>
-                <li> {{name}} </li>
-                {{#with location}}
-                <li>
-                    <address>{{address}}</address>
-                </li>
-                <li>{{city}} ({{country}})</li>
-                {{/with}}
-
-                {{> title data='Exhibits'}}
-                {{#each exhibits}}
-                <li>{{name}}
-                    {{#if artist}} ({{artist}}) {{/if}}
-                </li>
-                <p>"{{description}}"</p>
-                {{/each}}
-            </ul>
-            {{/with}}
-        </section>
-
-        <section>
-            {{#with venue }}
-            {{> title data='Venue'}}
-            <ul>
-                <li> {{name}} </li>
-                {{#with location}}
-                <li>
-                    <address>{{address}}</address>
-                </li>
-                <li>{{city}} ({{country}})</li>
-                {{/with}}
-            </ul>
+        {{#with museum}}
+        {{> title data='Museum'}}
+        <ul>
+            <li> {{name}} </li>
+            {{#with location}}
+            <li>
+                <address>{{address}}</address>
+            </li>
+            <li>{{city}} ({{country}})</li>
             {{/with}}
 
-            <ul>
-                {{> title data='Performers'}}
-                {{#each performers}}
-                <li>{{name}}</li>
-                <p> {{type}}</p>
-                {{/each}}
-            </ul>
-        </section>
+            {{> title data='Exhibits'}}
+            {{#each exhibits}}
+            <li>{{name}}
+                {{#if artist}} ({{artist}}) {{/if}}
+            </li>
+            <p>"{{description}}"</p>
+            {{/each}}
+        </ul>
+        {{/with}}
+
+        {{#with venue }}
+        {{> title data='Venue'}}
+        <ul>
+            <li> {{name}} </li>
+            {{#with location}}
+            <li>
+                <address>{{address}}</address>
+            </li>
+            <li>{{city}} ({{country}})</li>
+            {{/with}}
+        </ul>
+        {{/with}}
 
         <ul>
+            {{#if performers}}
+            {{> title data='Performers'}}
+            {{#each performers}}
+            <li>{{name}}</li>
+            <p> {{type}}</p>
+            {{/each}}
+            {{/if}}
+        </ul>
+
+        <div>
             {{#with guide}}
             {{> title data='Guide'}}
             <li> {{name}}</li>
             <li>{{language}} ({{rating}})</li>
             {{/with}}
-        </ul>
+        </div>
+        <hr>
         {{/with}}
     </ul>
 
