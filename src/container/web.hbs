@@ -1,0 +1,89 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with web}}
+    {{> title data='Languages:' big=true}}
+    {{#each languages}}
+    <li> {{name}} </li>
+    <li> {{version}} </li>
+    <p> "{{description}}"</p>
+
+    <ul>
+        {{#if elements}}
+        {{> title data=' Elements'}}
+        {{#each elements}}
+        <li><em>{{name}}</em> - /{{description}}/ </li>
+
+        <ul>
+            {{#if attributes}}
+            {{> title data=' Attributes'}}
+            {{#each attributes}}
+            <li>{{name}}</li>
+            <q>{{description}} </q>
+            <br>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{/each}}
+        {{/if}}
+    </ul>
+
+    <ul>
+        {{#if properties}}
+        {{> title data=' Properties'}}
+        {{#each properties}}
+        <li><em>{{name}}</em> - /{{description}}/ </li>
+
+        <ul>
+            {{#if values}}
+            {{> title data=' Values'}}
+            {{#each values}}
+            <li>{{value}}</li>
+            <p> {{description}}</p>
+            <br>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{/each}}
+        {{/if}}
+    </ul>
+
+    <ul>
+        {{#if functions}}
+        {{> title data=' Functions'}}
+        {{#each functions}}
+        <li><em>{{name}}</em> - /{{description}}/ </li>
+
+        <ul>
+            {{#if parameters}}
+            {{> title data=' Parameters'}}
+            {{#each parameters}}
+            <li>{{name}} ({{type}})</li>
+
+            <p> {{description}}</p>
+            <br>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{/each}}
+        {{/if}}
+    </ul>
+    <hr>
+    <br>
+
+    </ul>
+
+    {{/each}}
+
+    {{/with}}
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
