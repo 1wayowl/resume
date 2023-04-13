@@ -20,9 +20,10 @@
         <div>{{name}} -- {{type}} ({{duration}}h) </div>
 
         {{#with details}}
+
         <section>
-            {{> title data='Museum'}}
             {{#with museum}}
+            {{> title data='Museum'}}
             <ul>
                 <li> {{name}} </li>
                 {{#with location}}
@@ -32,36 +33,20 @@
                 <li>{{city}} ({{country}})</li>
                 {{/with}}
 
-
                 {{> title data='Exhibits'}}
-
-                <ul>
-                    {{#each exhibits}}
-                    <li>{{name}}
-                        {{#if artist}} ({{artist}}) {{/if}}
-                    </li>
-                    <p>"{{description}}"</p>
-                    {{/each}}
-                </ul>
-            </ul>
-
-            {{> title data='Guide'}}
-            <ul>
-                {{#with guide}}
-                <li> {{name}}</li>
-                <li>{{language}} ({{rating}})</li>
-                {{/with}}
+                {{#each exhibits}}
+                <li>{{name}}
+                    {{#if artist}} ({{artist}}) {{/if}}
+                </li>
+                <p>"{{description}}"</p>
+                {{/each}}
             </ul>
             {{/with}}
         </section>
-        {{/with}}
 
         <section>
-            {{#with details}}
-
+            {{#with venue }}
             {{> title data='Venue'}}
-
-            {{#with venue}}
             <ul>
                 <li> {{name}} </li>
                 {{#with location}}
@@ -73,22 +58,22 @@
             </ul>
             {{/with}}
 
-            {{> title data='Performers'}}
-
             <ul>
+                {{> title data='Performers'}}
                 {{#each performers}}
                 <li>{{name}}</li>
                 <p> {{type}}</p>
                 {{/each}}
             </ul>
-            {{> title data='Guide'}}
-            <ul>
-                {{#with guide}}
-                <li> {{name}}</li>
-                <li>{{language}} ({{rating}})</li>
-                {{/with}}
-            </ul>
         </section>
+
+        <ul>
+            {{#with guide}}
+            {{> title data='Guide'}}
+            <li> {{name}}</li>
+            <li>{{language}} ({{rating}})</li>
+            {{/with}}
+        </ul>
         {{/with}}
     </ul>
 
