@@ -1,0 +1,64 @@
+<main>
+    <div class="card">
+        <div class="card-body">
+
+            {{#with heading}}
+            <a href="#" class="btn btn-outline-light btn-link "> <span
+                    class="display-1 text-warning text-outline-secondary">Heading</span> </a>
+
+            <br>
+            <br>
+
+            {{#with main}}
+            <div class="card">
+                <div class="card-body text-muted ">
+                    <div class="text display-1"> Main</div>
+                    <span class="text-warning text-outline-secondary">{{title}}</span>
+                    <p>{{text}}</p>
+                    {{#with button_text}}
+                    <p><button class="btn btn-info btn-lg">{{solid}}</button></p>
+                    <button class="btn btn-outline-info btn-lg">{{outline}}</button>
+                    {{/with}}
+                    {{/with}}
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            {{#with second }}
+            <div class="card">
+                <div class="card-body text-muted ">
+                    <div class="text display-2 ">Second</div>
+                    <span class="text-warning text-outline-secondary">{{title}}</span>
+                    <p>{{text}}</p>
+                    {{#with button_text}}
+                    <p><button class="btn btn-secondary ">{{solid}}</button></p>
+                    <button class="btn btn-outline-secondary ">{{outline}}</button>
+                    {{/with}}
+                    {{/with}}
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            {{#with subblock}}
+            <div class="card">
+                <div class="card-body text-muted ">
+                    <div class="text display-3 ">Subblock</div>
+                    <span class="text-warning text-outline-secondary">{{title}}</span>
+                    <p>{{text}}</p>
+                    {{#with button_text}}
+                    <p><button class="btn btn-dark btn-sm">{{solid}}</button></p>
+                    <button class="btn btn-outline-dark btn-sm">{{outline}}</button>
+                    {{/with}}
+                    {{/with}}
+                </div>
+            </div>
+
+            {{/with}}
+        </div>
+    </div>
+
+</main>
