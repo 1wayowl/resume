@@ -4,7 +4,56 @@
 --}}
 
 <div>
-    In progress
+    <h1>{{name}} </h1>
+    <q>{{description}} </q>
+    <div>
+        {{#with history}}
+        {{> title data='History'}}
+        {{year}} {{founder}}
+        {{/with}}
+    </div>
+
+
+    {{> title data='Types:' big=true}}
+    {{#each types}}
+    <li> {{''}} </li>
+    {{/each}}
+
+    {{#with Syntax}}
+    {{> title data='Syntax'}}
+    <ul>
+        <li> variables: [{{variables }}] </li>
+        <li> functions: [{{functions }}] </li>
+        <li> conditionals: [{{conditionals }} ] </li>
+        <li> loops: [{{loops }}]</li>
+        <li> classes: [{{ classes }}]</li>
+    </ul>
+    {{/with}}
+
+    {{> title data='Features'}}
+    {{#each features}}
+    <ul><q> {{''}} </q></ul>
+    {{/each}}
+
+    {{> title data='Libraries'}}
+    {{#each libraries}}
+    <ul><q> {{''}} </q></ul>
+    {{/each}}
+
+    {{> title data='Tools'}}
+    {{#each tools}}
+    <ul>
+        <h4><span class="badge bg-secondary">{{''}}</span></h4>
+    </ul>
+    {{/each}}
+
+    {{> title data='Community' }}
+    {{#each community }}
+
+    <li><button type="button" class="btn btn-warning">{{name}}</button> - <em>({{type}})</em></li>
+    {{/each}}
+
+
 </div>
 
 
