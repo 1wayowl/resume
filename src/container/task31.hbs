@@ -1,0 +1,24 @@
+<main>
+
+
+    <div class="display-1 text-center ">Карточки таблицы колонки</div>
+
+    {{#with navigation}}
+    <div>Navigation</div>
+    <ul>
+        {{#each links}}
+        <li> {{text}} </li>
+        <a href="#"> {{href}} </a>
+        {{/each}}
+
+        <li>{{#with button}}
+            <button class="btn btn-outline-danger btn-link">
+                {{text}}
+                <a href="#" class="btn btn-outline-danger btn-link"> {{href}} </a>
+            </button>
+            {{/with}}
+        </li>
+
+    </ul>
+    {{/with}}
+</main>

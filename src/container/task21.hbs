@@ -61,4 +61,71 @@
         </div>
     </div>
 
+    <br>
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            {{#with nested_display}}
+            <span class="display-1 text-dark">Nested_display
+                <div>{{title}}</div>
+            </span>
+
+            {{#with children_display}}
+            <div class="card">
+                <div class="card-body  ">
+                    <div class="text display-4"> Children_display</div>
+                    <span class=" text-outline-secondary">{{title}}</span>
+                    <p>{{text}}</p>
+                    {{#with button}}
+                    <button class="btn btn-outline-warning">{{text}}</button>
+                    {{/with}}
+                    {{/with}}
+                </div>
+            </div>
+
+            <br>
+
+            <div>
+                <h6>{{header_text}}</h6>
+            </div>
+            {{#with button}}
+            <button class="btn btn-info btn-sm">{{text}}</button>
+            {{/with}}
+        </div>
+    </div>
+    {{/with}}
+
+    <br>
+
+    <div class="card">
+        <div class="card-body ">
+            {{#with paragraph}}
+            <p class="text-uppercase"> {{title}} </p>
+            <p class="text-lowercase">{{text}} </p>
+
+            {{#with button}}
+            <p href="#" class="btn btn-link">{{text}} </p>
+            {{/with}}
+
+            <br>
+
+            <div class="card">
+                <div class="card-body  ">
+                    <ul>
+                        {{#each list_name}}
+                        <li>
+                            <a href="url" class="btn btn-link">{{text}} </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    </div>
+    </div>
+
 </main>
