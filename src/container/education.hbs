@@ -8,7 +8,7 @@
     <main>
         <section>
             {{> title data='My Educationss' big=true}}
-            <ul>
+            <ul class="ps-5">
                 {{#each educations }}
                 <li> {{name }}
                     {{#unless isEnd}} (ще в процесі) {{/unless}}
@@ -19,7 +19,7 @@
         <br>
         <section>
             {{> title data='My certificates' big=false}}
-            <ul>
+            <ul class="ps-5">
                 {{#each certificates }}
                 <li> {{name }} ({{ id }}) </li>
                 {{/each }}

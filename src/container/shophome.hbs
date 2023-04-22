@@ -1,0 +1,154 @@
+<main class="p-5">
+
+
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="my-4">
+                {{#with navigation}}
+                <div class="nav nav-tabs">
+                    <div class="nav-link active">
+                        {{#each links}}
+                        <a href="href" class="text-link mx-1"> {{text}} </a>
+                        {{/each}}
+                        <button class="btn btn-disabled mb-1"> Disabled </button>
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        {{#with newsBlock}}
+        <h1 class="text-center mt-3 mb-3">Latest News</h1>
+
+        <div class="row">
+            {{#each cards}}
+            <div class="col-3 ">
+                <div class="card alert text-bg-dark">
+                    <ul class="list-group">
+                        <p>{{title}}</p>
+                        <p>{{description}} </p>
+                        <div>{{#if isTop }}
+                            <div class="badge text-bg-success rounded-pill">
+                                isTop
+                            </div>
+                            {{/if}}
+                            {{#if isNew}}<div class="badge text-bg-danger rounded-pill">
+                                isNew
+                            </div>{{/if}}
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+
+    <section>
+        <div class="row">
+            <div class="col-12 mb-5">
+                {{#with goodsBlock}}
+
+                <div>
+                    <div class="nav m-5 ms-0">
+                        <div class="nav nav-link ">
+                            {{#each tabs}}
+                            <a href="#" class="text-link mx-3 ms-0">
+                                {{#if isActive }} isActive {{/if}}
+                                {{#if isDisabled}} isDisabled{{/if}}
+                                {{text}}
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {{#each cards}}
+                    <div class="col-4 ">
+                        <ul class="list-group mb-3">
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="product photo">
+                            <p>{{title}}</p>
+                            <p>{{description}} </p>
+                            <div>{{#if isHot }}
+                                <div class="badge text-bg-warning rounded-pill">
+                                    isHot
+                                </div>
+                                {{/if}}
+                                {{#if isNew}}<div class="badge text-bg-primary rounded-pill">
+                                    isNew
+                                </div>{{/if}}
+                            </div>
+                        </ul>
+                    </div>
+                    {{/each}}
+                </div>
+
+                {{/with}}
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="row">
+            <div class="col-12 mb-5">
+                <div class="card list-group alert alert-dark ps-3">
+                    {{#with subscribe}}
+                    <h2 class=""> {{header}} </h2>
+                    <p>{{description}} </p>
+                    {{#each buttons}}
+                    <div class="col-4">
+                        <a href="link" class="btn btn-primary mb-2"> {{text}} </a>
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="row">
+            <div class="col-12 mb-5 ">
+                <div class="card list-group">
+                    <div class=" alert alert-success ps-3  text-center">
+                        {{#with service}}
+                        <h2 class=" text-light"> {{ title}} </h2>
+                        <p>{{description}} </p>
+                        {{#each buttons}}
+                        <a href="link" class="btn btn-primary mb-2"> {{text}} </a>
+                        {{/each}}
+                        {{/with}}
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="row ">
+            {{#each footer}}
+            <div class="col-2">
+                <div class="nav flex-column">
+                    {{#each this}}
+                    <a href="link" class="nav-link "> {{text}} </a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
