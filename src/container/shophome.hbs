@@ -27,17 +27,21 @@
             <div class="col-3 ">
                 <div class="card alert text-bg-dark">
                     <ul class="list-group">
-                        <p>{{title}}</p>
-                        <p>{{description}} </p>
-                        <div>{{#if isTop }}
-                            <div class="badge text-bg-success rounded-pill">
-                                isTop
+                        <div class="nav nav-tabs ">
+                            {{title}}
+                            <div class="card-title">{{#if isTop }}
+                                <div class="badge text-bg-success rounded-pill">
+                                    Top
+                                </div>
+                                {{/if}}
+                                {{#if isNew}}<div class="badge text-bg-danger rounded-pill">
+                                    New
+                                </div>{{/if}}
                             </div>
-                            {{/if}}
-                            {{#if isNew}}<div class="badge text-bg-danger rounded-pill">
-                                isNew
-                            </div>{{/if}}
                         </div>
+
+                        <p>{{description}} </p>
+
                     </ul>
                 </div>
             </div>
@@ -52,15 +56,18 @@
                 {{#with goodsBlock}}
 
                 <div>
-                    <div class="nav m-5 ms-0">
-                        <div class="nav nav-link ">
+                    <div class="nav m-5 mx-5">
+                        <div class="nav nav-tabs ">
                             {{#each tabs}}
-                            <a href="#" class="text-link mx-3 ms-0">
-                                {{#if isActive }} isActive {{/if}}
-                                {{#if isDisabled}} isDisabled{{/if}}
-                                {{text}}
-                            </a>
+                            <div class="nav-item">
+                                <div class="nav-link
+                                {{#if isActive }} active {{/if}}
+                                {{#if isDisabled}} disabled{{/if}} ">
+                                    {{text}}
+                                </div>
+                            </div>
                             {{/each}}
+
                         </div>
                     </div>
                 </div>
@@ -70,16 +77,18 @@
                     <div class="col-4 ">
                         <ul class="list-group mb-3">
                             <img class="card-img-top" src="https://picsum.photos/400/200" alt="product photo">
-                            <p>{{title}}</p>
-                            <p>{{description}} </p>
-                            <div>{{#if isHot }}
-                                <div class="badge text-bg-warning rounded-pill">
-                                    isHot
+                            <div class="nav nav-tabs ">
+                                {{title}}
+                                <div class="mx-2">{{#if isHot }}
+                                    <div class="badge text-bg-warning rounded-pill">
+                                        Hot
+                                    </div>
+                                    {{/if}}
+                                    {{#if isNew}}<div class="badge text-bg-primary rounded-pill">
+                                        New
+                                    </div>{{/if}}
                                 </div>
-                                {{/if}}
-                                {{#if isNew}}<div class="badge text-bg-primary rounded-pill">
-                                    isNew
-                                </div>{{/if}}
+                                <p>{{description}} </p>
                             </div>
                         </ul>
                     </div>
@@ -112,12 +121,12 @@
         <div class="row">
             <div class="col-12 mb-5 ">
                 <div class="card list-group">
-                    <div class=" alert alert-success ps-3  text-center">
+                    <div class=" alert alert-success text-center">
                         {{#with service}}
                         <h2 class=" text-light"> {{ title}} </h2>
                         <p>{{description}} </p>
                         {{#each buttons}}
-                        <a href="link" class="btn btn-primary mb-2"> {{text}} </a>
+                        <a href="link" class="btn btn-primary "> {{text}} </a>
                         {{/each}}
                         {{/with}}
                     </div>
@@ -132,7 +141,8 @@
             <div class="col-2">
                 <div class="nav flex-column">
                     {{#each this}}
-                    <a href="link" class="nav-link "> {{text}} </a>
+                    <a href="link" class="nav-link {{#if @last}} disabled {{/if}}"> {{ text}} </a>
+
                     {{/each}}
                 </div>
             </div>
