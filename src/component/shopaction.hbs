@@ -1,0 +1,17 @@
+<section>
+    <div class="row">
+        <div class="col-12 mb-5 ">
+            <div class="card list-group">
+                <div class=" text-bg-success text-center text-light p-2">
+                    {{#with service}}
+                    <h2> {{ title}} </h2>
+                    <p>{{description}} </p>
+                    {{#each buttons}}
+                    <a href="link" class="btn btn-primary "> {{text}} </a>
+                    {{/each}}
+                    {{/with}}
+                </div>
+
+            </div>
+        </div>
+</section>

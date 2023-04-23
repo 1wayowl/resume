@@ -117,23 +117,7 @@
             </div>
     </section>
 
-    <section>
-        <div class="row">
-            <div class="col-12 mb-5 ">
-                <div class="card list-group">
-                    <div class=" alert alert-success text-center">
-                        {{#with service}}
-                        <h2 class=" text-light"> {{ title}} </h2>
-                        <p>{{description}} </p>
-                        {{#each buttons}}
-                        <a href="link" class="btn btn-primary "> {{text}} </a>
-                        {{/each}}
-                        {{/with}}
-                    </div>
-
-                </div>
-            </div>
-    </section>
+    {{> shopaction}}
 
     <section>
         <div class="row ">
@@ -149,16 +133,5 @@
             {{/each}}
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
 
 </main>

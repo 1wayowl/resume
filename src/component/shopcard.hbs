@@ -1,0 +1,25 @@
+<div class="row">
+    {{#each cards}}
+    <div class="col-3 ">
+        <div class="card alert text-bg-dark">
+            <ul class="list-group">
+                <div class="nav nav-tabs ">
+                    {{title}}
+                    <div class="card-title">{{#if isTop }}
+                        <div class="badge text-bg-success rounded-pill">
+                            Top
+                        </div>
+                        {{/if}}
+                        {{#if isNew}}<div class="badge text-bg-danger rounded-pill">
+                            New
+                        </div>{{/if}}
+                    </div>
+                </div>
+
+                <p>{{description}} </p>
+
+            </ul>
+        </div>
+    </div>
+    {{/each}}
+</div>
