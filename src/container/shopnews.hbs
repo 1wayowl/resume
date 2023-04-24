@@ -1,0 +1,66 @@
+<main class="p-5">
+
+    {{> shopheader}}
+
+    {{> breadcrumb}}
+
+    <div class="mb-5">
+        {{#with newsData}}
+
+        <div class="row ">
+            <div class="col-12 ">
+                <img class="card-img-top mb-3" src="https://picsum.photos/400/200" alt="product photo">
+
+                {{#with head}}
+                <h2 class="card-title text-center mb-2">{{heading}}</h2>
+                <p>{{description}} </p>
+                {{/with}}
+
+                {{#each body}}
+                <h3>{{title}} </h3>
+                <div> {{text}} </div>
+                {{/each}}
+
+            </div>
+        </div>
+        {{/with}}
+    </div>
+
+    <div class="mb-5">
+        {{#with newsOtherBlock}}
+        <h1 class="text-center my-5 mb-3">{{title}}</h1>
+
+        <div class="row">
+            {{#each cards}}
+            <div class="col-3 ">
+                <div class="alert text-bg-dark">
+                    <ul class="list-group">
+                        <div class="nav nav-tabs ">
+                            <div class="card-title mb-2"> {{title}}
+                                {{#if isTop }}
+                                <div class="badge text-bg-success rounded-pill">
+                                    Top
+                                </div>
+                                {{/if}}
+                                {{#if idNew}}
+                                <div class="badge text-bg-danger rounded-pill">
+                                    New
+                                </div>{{/if}}
+                            </div>
+                        </div>
+
+                        <p>{{description}} </p>
+
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+
+    {{>shopaction}}
+    {{> shopfooter}}
+
+
+</main>
