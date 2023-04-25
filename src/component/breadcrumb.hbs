@@ -1,0 +1,11 @@
+<div class="nav nav-tabs mx-4">
+    <ol class="breadcrumb">
+        {{#each breadcrumb}}
+        <li class="breadcrumb-item">
+            {{#if url}}
+            <a href="{{url}}"> {{name}} </a>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ol>
+</div>
