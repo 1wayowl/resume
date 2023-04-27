@@ -1,0 +1,125 @@
+<main class="p-5">
+
+    {{#with header}}
+    <h1 class="mb-5"> {{title}} <img src="/svg/basket.svg"></h1>
+
+
+    {{#with button}}
+    <a href="link" class="btn btn-outline-secondary mb-2"> {{text}} </a>
+    {{/with}}
+    {{/with}}
+
+
+    <hr>
+
+    <section>
+        <div class="col-12 mb-5">
+
+            {{#each goodsBlock}}
+            <div class="card p-2 pt-3 gy-2">
+                <div class="row">
+                    <div class="col-2 ">
+                        <img src="https://picsum.photos/110/110" alt="product photo" width="110" height="110">
+                    </div>
+                    <div class="col-4">
+                        <h5>{{name}}</h5>
+                        <p>{{description}} </p>
+                    </div>
+                    <div class="col-2">
+                        {{#with price}}
+                        {{title}} : <h4>{{value}}</h4>
+                        {{/with}}
+                    </div>
+
+                    <div class="col-2"> {{amount}} </div>
+
+                    <div class="col-2 pt-2">
+                        {{#each buttons}}
+                        <div><button class="btn mb-3   
+                    {{#if isPrimary}}btn-primary text-light{{/if}}
+                    {{#if isDanger}}btn-outline-danger{{/if}} ">
+                                {{text}}</button>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </section>
+
+    <hr>
+
+
+    <section>
+
+        {{#with total}}
+        <h3> {{title}} </h3>
+        <h2>{{amount}} </h2>
+        <div class="mb-5">{{delivery}}</div>
+
+        {{#each buttons}}
+        <div><a href="link" class="btn mb-2 
+                    {{#if isSuccess}}btn-success text-light{{/if}}
+                    {{#if isOutline}}btn-outline-success{{/if}} ">
+                {{text}}</a>
+        </div>
+        {{/each}}
+        {{/with}}
+
+    </section>
+
+    <hr>
+
+    <div class="mb-5">
+        {{#with goodsOtherBlock}}
+        <h1 class="text-center my-5 mb-3">{{title}}</h1>
+
+        <div class="row">
+            {{#each cards}}
+            <div class="col-4 ">
+                <ul class="list-group">
+                    <div class="card">
+                        <img class="card-img-top mb-2" src="https://picsum.photos/400/200" alt="product photo">
+                        <div class="card-title p-2"> {{title}}
+                            {{#if isHot }}
+                            <div class="badge text-bg-success rounded-pill">
+                                Hot
+                            </div>
+                            {{/if}}
+                            {{#if idNew}}
+                            <div class="badge text-bg-danger rounded-pill">
+                                New
+                            </div>{{/if}}
+                        </div>
+                        <p class="p-2">{{description}} </p>
+
+                    </div>
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+
+    <section>
+        <div class="row">
+            <div class="col-12 mb-5">
+                <div class="card list-group alert alert-dark text-light ps-3">
+                    {{#with subscribe}}
+                    <h2> {{header}} </h2>
+                    <p>{{description}} </p>
+                    {{#each buttons}}
+                    <div class="col-4">
+                        <a href="link" class="btn btn-primary mb-2"> {{text}} </a>
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+    </section>
+
+
+
+</main>
