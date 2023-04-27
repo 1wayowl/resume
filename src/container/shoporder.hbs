@@ -259,6 +259,7 @@
                 {{#with availabel_coupon}}
                 <label class="form-label placeholder={{placeholder}} "> {{label}} </label>
                 <select class="form-select ">
+                    <option selected>{{placeholder}}</option>
                     {{#each options}}
                     <option value="{{value}}">{{text}} </option>
                     {{/each}}
@@ -267,6 +268,7 @@
                 {{#with friend_coupon}}
                 <label class="form-label placeholder={{placeholder}}"> {{label}} </label>
                 <select class="form-select">
+                    <option selected>{{placeholder}}</option>
                     {{#each options}}
                     <option value="{{value}}">{{text}} </option>
                     {{/each}}
@@ -288,11 +290,11 @@
                     <input placeholder="{{placeholder}}" class="form-control form-control ">
                     <div class="form-text ">{{caption}}</caption>
                         {{/with}}
-
-                        {{/with}}
                     </div>
                     {{/with}}
-
+                </div>
+                {{/with}}
+            </div>
     </section>
 
     <hr>
@@ -323,7 +325,8 @@
 
         {{#with purchase_frequency}}
         <label class="form-label">{{label}} </label>
-        <select class="form-select" placeholder="{{placeholder}}">
+        <select class="form-select">
+            <option selected>{{placeholder}}</option>
             {{#each options}}
 
             <option value="{{value}}">{{text}} </option>
