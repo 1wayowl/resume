@@ -1,23 +1,5 @@
 <main class="p-5">
 
-
-    <div class="row">
-        <div class="col-12 mb-3">
-            <div class="my-4">
-                {{#with navigation}}
-                <div class="nav nav-tabs">
-                    <div class="nav-link active">
-                        {{#each links}}
-                        <a href="href" class="text-link mx-1"> {{text}} </a>
-                        {{/each}}
-                        <button class="btn btn-disabled mb-1"> Disabled </button>
-                    </div>
-                </div>
-                {{/with}}
-            </div>
-        </div>
-    </div>
-
     <div>
         {{#with newsBlock}}
         <h1 class="text-center mt-3 mb-3">Latest News</h1>
@@ -119,19 +101,5 @@
 
     {{> shopaction}}
 
-    <section>
-        <div class="row ">
-            {{#each footer}}
-            <div class="col-2">
-                <div class="nav flex-column">
-                    {{#each this}}
-                    <a href="link" class="nav-link {{#if @last}} disabled {{/if}}"> {{ text}} </a>
-
-                    {{/each}}
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </section>
 
 </main>
