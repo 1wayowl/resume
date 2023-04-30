@@ -16,27 +16,12 @@
 
     <div class="row">
         <div class="card col-3 p-3 me-3">
-            <div class="list mb-2">
-                <div><a href="/summary" class="btn btn-primary text-capitalize mt-2">summary</a></div>
-                <div><a href="/skills" class="btn btn-primary text-capitalize mt-2">skills</a></div>
-                <div><a href="/work" class="btn btn-primary text-capitalize mt-2">work</a> </div>
-                <div><a href="/education" class="btn btn-primary text-capitalize mt-2">education</a></div>
-                <div><a href="/person" class="btn btn-primary text-capitalize mt-2">person</a></div>
-                <div><a href="/program" class="btn btn-primary text-capitalize mt-2">program</a></div>
-            </div>
+
+            {{#each links}}
+            <a href="{{href}}" class="btn btn-primary mt-2 text-capitalize">{{name}} </a>
+            {{/each}}
         </div>
-        <div class="card col-3 p-3">
-            <div class="list mb-2">
-                <div><a href="/shopcart" class="btn btn-outline-primary text-capitalize mt-2">shopcart</a></div>
-                <div><a href="/shophome" class="btn btn-outline-primary text-capitalize mt-2">shophome</a></div>
-                <div><a href="/shopnews" class="btn btn-outline-primary text-capitalize mt-2">shopnews</a></div>
-                <div><a href="/shoporder" class="btn btn-outline-primary text-capitalize mt-2">shoporder</a></div>
-                <div><a href="/shopproduct" class="btn btn-outline-primary text-capitalize mt-2">shopproduct</a></div>
-                <div><a href="/shopprofile" class="btn btn-outline-primary text-capitalize mt-2">shopprofile</a></div>
-                <div><a href="/shopreview" class="btn btn-outline-primary text-capitalize mt-2">shopreview</a></div>
-            </div>
-        </div>
-    </div>
+
     </div>
 
 </main>

@@ -39,12 +39,75 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/index', function (req, res) {
+router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {
     layout: 'index',
+    links: [
+      {
+        name: 'summary',
+        href: '/summary',
+      },
+      {
+        name: 'skills',
+        href: '/skills',
+      },
+      {
+        name: 'summary',
+        href: '/summary',
+      },
+      {
+        name: 'work',
+        href: '/work',
+      },
+      {
+        name: 'education',
+        href: '/education',
+      },
+      {
+        name: 'person',
+        href: '/person',
+      },
+      {
+        name: 'program',
+        href: '/program',
+      },
+      {
+        name: 'Biography',
+        href: '/bio',
+      },
+
+      {
+        name: 'shopcart',
+        href: '/shopcart',
+      },
+      {
+        name: 'shophome',
+        href: '/shophome',
+      },
+      {
+        name: 'shopnews',
+        href: '/shopnews',
+      },
+      {
+        name: 'shoporder',
+        href: '/shoporder',
+      },
+      {
+        name: 'shopproduct',
+        href: '/shopproduct',
+      },
+      {
+        name: 'shopprofile',
+        href: '/shopprofile',
+      },
+      {
+        name: 'shopreview',
+        href: '/shopreview',
+      },
+    ],
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
