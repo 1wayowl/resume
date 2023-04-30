@@ -1,0 +1,30 @@
+<div class="col-12 mb-5">
+    {{#each itemList}}
+    <div class="card">
+        <div class="row">
+            <div class="col-3">
+                <span>{{number}}</span>
+                <p>{{status}} </p>
+            </div>
+            <div class="col-2">
+                {{#with amount}}
+                {{title}} : <h4>{{value}}</h4>
+                {{/with}}
+            </div>
+            <div class="col-5 ">
+                {{#each images}}
+                <img src="https://picsum.photos/110/110" alt="product photo" width="110" height="110">
+                {{/each}}
+            </div>
+            <div class="col-2 pt-2">
+                {{#with button}}
+                <div><a href="{{link}}" class="btn mb-3   
+                    {{#if isPrimary}}btn-primary text-light{{/if}} ">
+                        {{text}}</a>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

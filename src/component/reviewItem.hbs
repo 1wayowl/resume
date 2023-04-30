@@ -1,0 +1,54 @@
+<div class="col-12 mb-5">
+    <div class="row g-3 mt-5">
+        {{#each reviewList}}
+        <div class="card mb-3 p-3">
+            <div class="card-item">
+                <div class="card  p-3">
+                    {{#with title}}
+                    <h6>{{userName}}</h6>
+                    <div>{{caption}}</div>
+                    <div>{{date}}</div>
+                    {{/with}}
+                </div>
+                <div class="card p-3 mb-3">
+                    {{#with reviewBody}}
+
+                    {{#with seller}}
+                    <div>{{title}}: {{value}}</div>
+                    {{/with}}
+                    <br>
+                    {{#with rating}}
+                    <div>{{title}}: {{value}}</div>
+                    {{/with}}
+                    <br>
+                    {{#each text}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                    {{#each advantages}}
+                    {{title}}
+                    <p>{{text}}</p>
+                    {{/each}}
+                    {{#each disadvantages}}
+                    {{title}}
+                    <p>{{text}}</p>
+                    {{/each}}
+                    <div class="col-12">
+                        {{#each images}}
+                        <img src="https://picsum.photos/110/110" alt="product photo" width="110" height="110">
+                        {{/each}}
+                    </div>
+                </div>
+
+                {{#each coments}}
+                <div class="card ms-5 mb-2">
+                    <h6>{{userName}}</h6>
+                    <div>{{date}}</div>
+                    <p>{{text}}</p>
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
