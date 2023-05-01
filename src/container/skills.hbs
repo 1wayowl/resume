@@ -6,7 +6,7 @@
 <div>
     {{#with main }}
     <main>
-        <section>
+        <section class="card p-3 mb-3">
             {{> title data='All Skills' big=true}}
             <ul>
                 {{#each skills }}
@@ -27,8 +27,8 @@
                 {{/each }}
             </ul>
         </section>
-        <hr>
-        <section>
+
+        <section class="card p-3">
             {{> title data='My hobbies' big=false}}
             <ul>
                 {{#each hobbies }}
